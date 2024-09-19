@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faBolt, faBriefcase, faPhone, faQuestionCircle  } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faBriefcase, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { faStarOfLife } from '@fortawesome/free-solid-svg-icons';
 
 <FontAwesomeIcon icon={faStarOfLife} />
@@ -18,7 +18,7 @@ const Mynav = () => {
         setIsOpen(!isOpen);
     };
     return (
-        <nav className="bg-gray-950 shadow-lg fixed w-full z-10 top-0">
+        <nav className="bg-gray-950v bg-gradient-to-r from-blue-800 to-indigo-900 shadow-lg fixedn w-full z-20 top-0">
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <div className="relative flex items-center justify-between h-16">
                     <div className="flex-shrink-0">
@@ -26,25 +26,21 @@ const Mynav = () => {
                     </div>
                     <div className="hidden sm:block sm:ml-6">
                         <div className="flex space-x-4">
-                            <Link href="/" className={`hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${pathname === '/' ? 'text-[#5dc0ed]' : 'text-gray-300 '}`}>
+                            <Link href="/" className={`px-3 py-2 rounded-md text-sm font-medium ${pathname === '/' ? 'text-[#5dc0ed]' : 'text-white '}`}>
                                 <FontAwesomeIcon icon={faHome} className="mr-2" /> Accueil
                             </Link>
-                            <Link href="/expertise" className={`hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${pathname === '/expertise' ? 'text-[#5dc0ed]' : 'text-gray-300 '}`}>
-                                <FontAwesomeIcon icon={faBolt} className="mr-2" /> Expertise
+                            <Link href="/price" className={`px-3 py-2 rounded-md text-sm font-medium ${pathname === '/travaux' ? 'text-[#5dc0ed]' : 'text-white '}`}>
+                                <FontAwesomeIcon icon={faBriefcase} className="mr-2" /> Nos pLans
                             </Link>
-                            <Link href="/travaux" className={`hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${pathname === '/travaux' ? 'text-[#5dc0ed]' : 'text-gray-300 '}`}>
-                                <FontAwesomeIcon icon={faBriefcase} className="mr-2" /> Travaux
-                            </Link>
-                            <Link href="/apropo" className={`hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${pathname === '/apropo' ? 'text-[#5dc0ed]' : 'text-gray-300 '}`}>
+                            <Link href="/apropo" className={`px-3 py-2 rounded-md text-sm font-medium ${pathname === '/apropo' ? 'text-[#5dc0ed]' : 'text-white '}`}>
                                 <FontAwesomeIcon icon={faQuestionCircle} className="mr-2" /> À propos
-                                
+
                             </Link>
                         </div>
                     </div>
-                    <Link href="/contact" className={`hidden md:block hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${pathname === '/contact' ? 'text-[#5dc0ed]' : 'text-gray-300 '}`}>
-                        <FontAwesomeIcon icon={faPhone} className="mr-2" /> Contact
-                       
-                    </Link>
+                    <Link href="/connexion" className='px-4 py-2 bg-white text-purple-600 rounded-full font-medium hover:bg-opacity-90 transition duration-300'>
+                     Se connecter</Link>
+
 
                     <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                         <button
@@ -114,7 +110,7 @@ const Mynav = () => {
                         Travaux
                     </a>
                     <a href="/apropo" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">À propos</a>
-                
+
                     <a href="/contact" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
                 </div>
             </div>
